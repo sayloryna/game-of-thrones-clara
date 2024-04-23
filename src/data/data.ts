@@ -32,7 +32,7 @@ const jaimeLannister: Knight = {
   speak: () => jaimeLannister.locution,
 };
 
-const daenerysTargaryen: Knight = {
+export const daenerysTargaryen: Knight = {
   name: "Daenerys",
   familyName: "Targaryen",
   age: 23,
@@ -46,7 +46,7 @@ const daenerysTargaryen: Knight = {
   speak: () => daenerysTargaryen.locution,
 };
 
-const tyrionLannister: Counselor = {
+export const tyrionLannister: Counselor = {
   name: "Tyrion",
   familyName: "Lannister",
   age: 40,

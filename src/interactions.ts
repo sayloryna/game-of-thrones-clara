@@ -4,8 +4,8 @@ import { type Character, type Locution } from "./types";
 export const getLocutions = (characters: Character[]): Locution[] =>
   characters.map((character) => character.locution);
 
-getLocutions(characters).forEach((locution) => {
-  console.log(locution);
-});
-
-getLocutions(characters);
+const speak = (locutions: Locution[]) => {
+  locutions.forEach((locution) => {
+    console.log(locution);
+  });
+};
