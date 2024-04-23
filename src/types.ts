@@ -1,9 +1,17 @@
 type Level = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+
+type Message =
+  | "Vais a morir todos"
+  | "Primero pego y luego pregunto"
+  | "No sé por qué, pero creo que voy a morir pronto"
+  | "Soy un loser";
 export interface Character {
   name: string;
   familyName: string;
   age: number;
   status: "alive" | "deceased";
+  die: () => void;
+  speak: () => Message;
 }
 
 export interface King extends Character {

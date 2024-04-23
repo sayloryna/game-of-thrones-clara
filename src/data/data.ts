@@ -12,6 +12,10 @@ const joffreyBaratheon: King = {
   status: "deceased",
   totalReignYears: 2,
   locution: "Vais a morir todos",
+  die() {
+    joffreyBaratheon.status = "deceased";
+  },
+  speak: () => joffreyBaratheon.locution,
 };
 
 const jaimeLannister: Knight = {
@@ -22,6 +26,10 @@ const jaimeLannister: Knight = {
   weapon: "Lamento de Viuda",
   dexterityLevel: 9,
   locution: "Primero pego y luego pregunto",
+  die() {
+    jaimeLannister.status = "deceased";
+  },
+  speak: () => jaimeLannister.locution,
 };
 
 const daenerysTargaryen: Knight = {
@@ -32,6 +40,10 @@ const daenerysTargaryen: Knight = {
   weapon: "Drogon",
   dexterityLevel: 8,
   locution: "Primero pego y luego pregunto",
+  die() {
+    daenerysTargaryen.status = "deceased";
+  },
+  speak: () => daenerysTargaryen.locution,
 };
 
 const tyrionLannister: Counselor = {
@@ -41,6 +53,10 @@ const tyrionLannister: Counselor = {
   status: "alive",
   counselledCharacter: daenerysTargaryen,
   locution: "No sé por qué, pero creo que voy a morir pronto",
+  die() {
+    tyrionLannister.status = "deceased";
+  },
+  speak: () => tyrionLannister.locution,
 };
 
 const bronn: Squire = {
@@ -51,9 +67,13 @@ const bronn: Squire = {
   master: jaimeLannister,
   grovellingLevel: 5,
   locution: "Soy un loser",
+  die() {
+    bronn.status = "deceased";
+  },
+  speak: () => bronn.locution,
 };
 
-const characters = [
+export const characters = [
   joffreyBaratheon,
   jaimeLannister,
   tyrionLannister,
