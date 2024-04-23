@@ -1,4 +1,4 @@
 import { characters } from "./data/data.js";
-import { getLocutions } from "./interactions.js";
+import { getLocutions, speak } from "./interactions.js";
 
-getLocutions(characters);
+speak(getLocutions(characters));
