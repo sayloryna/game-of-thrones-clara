@@ -1,4 +1,9 @@
-import { type Knight, type King } from "../types.js";
+import {
+  type Knight,
+  type King,
+  type Counselor,
+  type Squire,
+} from "../types.js";
 
 const joffreyBaratheon: King = {
   name: "Joffrey",
@@ -25,6 +30,25 @@ const daenerysTargaryen: Knight = {
   age: 23,
   status: "deceased",
   weapon: "Drogon",
-  dexterity: 10,
+  dexterity: 8,
   locution: "Primero pego y luego pregunto",
+};
+
+const tyrionLannister: Counselor = {
+  name: "Tyrion",
+  familyName: "Lannister",
+  age: 40,
+  status: "alive",
+  counselledCharacter: daenerysTargaryen,
+  locution: "No sé por qué, pero creo que voy a morir pronto",
+};
+
+const bronn: Squire = {
+  name: "Bronn",
+  familyName: "",
+  age: 33,
+  status: "alive",
+  master: jaimeLannister,
+  grovellingLevel: 5,
+  locution: "Soy un loser",
 };

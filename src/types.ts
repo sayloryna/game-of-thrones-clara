@@ -23,6 +23,6 @@ export interface Counselor extends Character {
 
 export interface Squire extends Character {
   master: Knight;
-  GrovellingLevel: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  grovellingLevel: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   locution: "Soy un loser";
 }

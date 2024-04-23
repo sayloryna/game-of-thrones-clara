@@ -1,21 +1,21 @@
 {
   "env": {
-    "es2021": true,
-    "node": true
+    "browser": true,
+    "es2021": true
   },
-  "extends": ["xo", "prettier"],
+  "extends": "xo",
   "overrides": [
     {
       "extends": ["xo-typescript", "prettier"],
-      "files": ["*.ts", "*.tsx"]
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
+      }
     }
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-
-  "rules": {
-    "@typescript-eslint/consistent-type-definitions": "off"
-  }
+  "rules": {}
 }
