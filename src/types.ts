@@ -1,6 +1,6 @@
 type Level = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
-type Message =
+export type Locution =
   | "Vais a morir todos"
   | "Primero pego y luego pregunto"
   | "No sé por qué, pero creo que voy a morir pronto"
@@ -11,7 +11,8 @@ export interface Character {
   age: number;
   status: "alive" | "deceased";
   die: () => void;
-  speak: () => Message;
+  speak: () => Locution;
+  locution: Locution;
 }
 
 export interface King extends Character {
