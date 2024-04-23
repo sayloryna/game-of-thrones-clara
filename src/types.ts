@@ -1,3 +1,4 @@
+type Level = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 export interface Character {
   name: string;
   familyName: string;
@@ -12,7 +13,7 @@ export interface King extends Character {
 
 export interface Knight extends Character {
   weapon: string;
-  dexterity: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  dexterityLevel: Level;
   locution: "Primero pego y luego pregunto";
 }
 
@@ -23,6 +24,6 @@ export interface Counselor extends Character {
 
 export interface Squire extends Character {
   master: Knight;
-  grovellingLevel: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  grovellingLevel: Level;
   locution: "Soy un loser";
 }

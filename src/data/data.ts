@@ -20,7 +20,7 @@ const jaimeLannister: Knight = {
   age: 34,
   status: "alive",
   weapon: "Lamento de Viuda",
-  dexterity: 9,
+  dexterityLevel: 9,
   locution: "Primero pego y luego pregunto",
 };
 
@@ -30,7 +30,7 @@ const daenerysTargaryen: Knight = {
   age: 23,
   status: "deceased",
   weapon: "Drogon",
-  dexterity: 8,
+  dexterityLevel: 8,
   locution: "Primero pego y luego pregunto",
 };
 
@@ -52,3 +52,11 @@ const bronn: Squire = {
   grovellingLevel: 5,
   locution: "Soy un loser",
 };
+
+const characters = [
+  joffreyBaratheon,
+  jaimeLannister,
+  tyrionLannister,
+  daenerysTargaryen,
+  bronn,
+];
