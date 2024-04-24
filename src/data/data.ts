@@ -1,77 +1,133 @@
+import { speak } from "../interactions.js";
 import {
-  type Knight,
+  kingLocution,
+  type Fighter,
   type King,
   type Counselor,
   type Squire,
+  type Level,
+  type Character,
+  type Locution,
+  fighterLocution,
+  counselorLocution,
+  squireLocution,
 } from "../types.js";
 
-const joffreyBaratheon: King = {
-  name: "Joffrey",
-  familyName: "Baratheon",
-  age: 14,
-  status: "deceased",
-  totalReignYears: 2,
-  locution: "Vais a morir todos",
-  die() {
-    joffreyBaratheon.status = "deceased";
+const createKing = (character: Character, totalReignYears: number): King => ({
+  name: character.name,
+  familyName: character.familyName,
+  age: character.age,
+  locution: kingLocution,
+  isAlive: true,
+  totalReignYears,
+  die(this: King) {
+    this.isAlive = false;
   },
-  speak: () => joffreyBaratheon.locution,
-};
+  speak() {
+    return kingLocution;
+  },
+});
 
-const jaimeLannister: Knight = {
-  name: "Jaime",
-  familyName: "Lannister",
-  age: 34,
-  status: "alive",
-  weapon: "Lamento de Viuda",
-  dexterityLevel: 9,
-  locution: "Primero pego y luego pregunto",
-  die() {
-    jaimeLannister.status = "deceased";
+const createFighter = (
+  character: Character,
+  weapon: string,
+  dexterityLevel: Level,
+): Fighter => ({
+  name: character.name,
+  familyName: character.familyName,
+  age: character.age,
+  isAlive: true,
+  locution: fighterLocution,
+  weapon,
+  dexterityLevel,
+  die(this: Fighter) {
+    this.isAlive = false;
   },
-  speak: () => jaimeLannister.locution,
-};
+  speak() {
+    return fighterLocution;
+  },
+});
 
-export const daenerysTargaryen: Knight = {
-  name: "Daenerys",
-  familyName: "Targaryen",
-  age: 23,
-  status: "deceased",
-  weapon: "Drogon",
-  dexterityLevel: 8,
-  locution: "Primero pego y luego pregunto",
-  die() {
-    daenerysTargaryen.status = "deceased";
+const createCounselor = (
+  character: Character,
+  counselledCharacter: Character,
+): Counselor => ({
+  name: character.name,
+  familyName: character.familyName,
+  age: character.age,
+  isAlive: true,
+  locution: counselorLocution,
+  counselledCharacter,
+  die(this: Counselor) {
+    this.isAlive = false;
   },
-  speak: () => daenerysTargaryen.locution,
-};
+  speak() {
+    return counselorLocution;
+  },
+});
 
-export const tyrionLannister: Counselor = {
-  name: "Tyrion",
-  familyName: "Lannister",
-  age: 40,
-  status: "alive",
-  counselledCharacter: daenerysTargaryen,
-  locution: "No sé por qué, pero creo que voy a morir pronto",
-  die() {
-    tyrionLannister.status = "deceased";
+const createSquire = (
+  character: Character,
+  master: Fighter,
+  grovellingLevel: Level,
+): Squire => ({
+  name: character.name,
+  familyName: character.familyName,
+  age: character.age,
+  isAlive: true,
+  locution: squireLocution,
+  master,
+  grovellingLevel,
+  die(this: Squire) {
+    this.isAlive = false;
   },
-  speak: () => tyrionLannister.locution,
-};
+  speak() {
+    return squireLocution;
+  },
+});
 
-const bronn: Squire = {
-  name: "Bronn",
-  familyName: "",
-  age: 33,
-  status: "alive",
-  master: jaimeLannister,
-  grovellingLevel: 5,
-  locution: "Soy un loser",
-  die() {
-    bronn.status = "deceased";
+export const daenerysTargaryen = createFighter(
+  {
+    name: "Daenerys",
+    familyName: "Targaryen",
+    age: 23,
+    locution: fighterLocution,
   },
-  speak: () => bronn.locution,
-};
+  "Drogon",
+  8,
+);
+
+const jaimeLannister = createFighter(
+  {
+    name: "Jaime",
+    familyName: "Lannister",
+    age: 34,
+    locution: fighterLocution,
+  },
+  "Lamento de Viuda",
+  9,
+);
+
+const joffreyBaratheon = createKing(
+  { name: "Joffrey", familyName: "Lannister", age: 14, locution: kingLocution },
+  2,
+);
+
+export const tyrionLannister = createCounselor(
+  {
+    name: "Tyrion",
+    familyName: "Lannister",
+    age: 40,
+    locution: counselorLocution,
+  },
+  daenerysTargaryen,
+);
+
+const bronn = createSquire(
+  { name: "Bronn", familyName: "", age: 33, locution: squireLocution },
+  jaimeLannister,
+  5,
+);
 
 export const characters = [
   joffreyBaratheon,
