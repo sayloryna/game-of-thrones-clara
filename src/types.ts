@@ -17,10 +17,15 @@ export interface Character {
   familyName: string;
   age: number;
   locution: Locution;
-  isAlive?: boolean;
-  die?: () => void;
-  speak?: () => Locution;
+  isAlive: boolean;
+  die: () => void;
+  speak: () => Locution;
 }
+
+export type CharacterWithoutMethods = Omit<
+  Character,
+  "speak" | "die" | "isAlive"
+>;
 
 export interface King extends Character {
   totalReignYears: number;
