@@ -1,10 +1,10 @@
-import { daenerysTargaryen, tyrionLannister } from "../data/data";
-import { getLocutions } from "../interactions";
-import { type Character, type Locution } from "../types";
+import { daenerysTargaryen, tyrionLannister } from "../data/characters.js";
+import { getLocutions } from "./interactions.js";
+import { type Character, type Locution } from "../../types.js";
 
 describe("Given the getLocutions function", (): void => {
-  describe("When it receives a list of characters", (): void => {
-    test("Then it should return a list of the characters locutions", (): void => {
+  describe("When it receives a list with a fighter and a counselor", (): void => {
+    test("Then it should return a list with 'Primero pego y luego pregunto' y 'No sé por qué, pero creo que voy a morir pronto'", (): void => {
       const testCharacters: Character[] = [daenerysTargaryen, tyrionLannister];
       const expectedLocutions: string[] = [
         "Primero pego y luego pregunto",
