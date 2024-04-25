@@ -10,7 +10,7 @@ import {
   type Level,
   type Squire,
   squireLocution,
-} from "../../types";
+} from "../../types.js";
 
 export const createKing = (
   character: CharacterWithoutMethods,

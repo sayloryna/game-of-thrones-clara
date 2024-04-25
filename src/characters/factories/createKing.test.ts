@@ -2,8 +2,8 @@ import {
   type CharacterWithoutMethods,
   type King,
   kingLocution,
-} from "../../types";
-import { createKing } from "./factories";
+} from "../../types.js";
+import { createKing } from "./factories.js";
 
 describe("Given the createKing function", () => {
   describe("When it receives 'Clara', 'Fraga', 23, a kingLocution and 45 years of reign ", () => {

@@ -10,8 +10,9 @@ import {
   counselorLocution,
   squireLocution,
 } from "../../types.js";
+import { type Fighter } from "../../types.js";
 
-export const daenerysTargaryen = createFighter(
+export const daenerysTargaryen: Fighter = createFighter(
   {
     name: "Daenerys",
     familyName: "Targaryen",
