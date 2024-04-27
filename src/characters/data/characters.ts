@@ -23,7 +23,7 @@ export const daenerysTargaryen: Fighter = createFighter(
   8,
 );
 
-const jaimeLannister = createFighter(
+export const jaimeLannister = createFighter(
   {
     name: "Jaime",
     familyName: "Lannister",
@@ -34,7 +34,7 @@ const jaimeLannister = createFighter(
   9,
 );
 
-const joffreyBaratheon = createKing(
+export const joffreyBaratheon = createKing(
   { name: "Joffrey", familyName: "Lannister", age: 14, locution: kingLocution },
   2,
 );
@@ -49,7 +49,7 @@ export const tyrionLannister = createCounselor(
   daenerysTargaryen,
 );
 
-const bronn = createSquire(
+export const bronn = createSquire(
   { name: "Bronn", familyName: "", age: 33, locution: squireLocution },
   jaimeLannister,
   5,

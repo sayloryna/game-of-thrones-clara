@@ -1,3 +1,5 @@
+import { type Character } from "../types.js";
+import { createCharacterList } from "./characterList.js";
 import { createHeader } from "./mainHeader.js";
 
 export const createMainContainer = () => {
@@ -22,4 +24,10 @@ export const renderMainCntainerWithHeader = (heading: string) => {
   mainContainer.appendChild(mainHeader);
 
   root.appendChild(mainContainer);
+};
+
+export const renderCharacterList = (characters: Character[]) => {
+  const mainContainer = document.querySelector(".main-container");
+
+  mainContainer?.appendChild(createCharacterList(characters));
 };
