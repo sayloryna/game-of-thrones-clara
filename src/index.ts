@@ -1,8 +1,7 @@
 import { characters } from "./characters/data/characters.js";
 import { getLocutions, speak } from "./characters/interactions/interactions.js";
-import { createHeader, createMainContainer } from "./ui/header.js";
+import { renderMainCntainerWithHeader } from "./ui/index.js";
 
 speak(getLocutions(characters));
 
-createMainContainer();
-createHeader();
+renderMainCntainerWithHeader("Game of Thrones");

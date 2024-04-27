@@ -36,5 +36,10 @@
     "serve": "^14.2.2",
     "ts-jest": "^29.1.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@jest/test-utils": "^0.0.0",
+    "@types/node": "^20.12.7",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }
