@@ -6,7 +6,7 @@ export const createCharacterCard = (character: Character) => {
 
   const characterName = document.createElement("h2");
   characterName.classList.add("character__name");
-  characterName.textContent = character.name + character.familyName;
+  characterName.textContent = `${character.name} ${character.familyName}`;
 
   characterElement.appendChild(characterName);
 

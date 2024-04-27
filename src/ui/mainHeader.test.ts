@@ -6,7 +6,10 @@ describe("Given the createHeader", () => {
       const titleText = "Game of Thrones";
       const header = createHeader(titleText);
 
-      expect(header.innerHTML).toBe(`<h1>${titleText}</h1>`);
+      const title = header.querySelector("h1")!;
+
+      expect(title).not.toBeNull();
+      expect(title.textContent).toBe(titleText);
     });
   });
 });
