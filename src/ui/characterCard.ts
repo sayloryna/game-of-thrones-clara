@@ -19,7 +19,7 @@ export const createCharacterCard = (character: Character) => {
 
   const characterAge = document.createElement("p");
   characterAge.classList.add("character__age");
-  characterAge.textContent = `age: ${character.age}`;
+  characterAge.textContent = `Age: ${character.age} years`;
 
   characterElement.appendChild(characterPhoto);
   characterMainDataContainer.appendChild(characterName);
