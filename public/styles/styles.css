@@ -18,14 +18,17 @@ h1 {
 }
 
 .main-container {
-  margin: 30px auto;
-  width: 75vw;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   justify-content: center;
 }
 
 .main-header {
-  font-weight: 700;
   color: #eee;
-  font-size: 2.1875rem;
+}
+
+.main-title {
+  font-weight: 700;
+  font-size: 4rem;
 }
