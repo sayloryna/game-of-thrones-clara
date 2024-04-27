@@ -5,12 +5,6 @@ import {
   createSquire,
 } from "../factories/factories.js";
 
-export const kingLocution = "Vais a morir todos";
-export const fighterLocution = "Primero pego y luego pregunto";
-export const counselorLocution =
-  "No sé por qué, pero creo que voy a morir pronto";
-export const squireLocution = "Soy un loser";
-
 const daenerysTargaryen = createFighter(
   {
     name: "Daenerys",

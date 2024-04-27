@@ -7,12 +7,12 @@ import {
   type Level,
   type Squire,
 } from "../../types.js";
-import {
-  counselorLocution,
-  fighterLocution,
-  kingLocution,
-  squireLocution,
-} from "../data/characters.js";
+
+export const kingLocution = "Vais a morir todos";
+export const fighterLocution = "Primero pego y luego pregunto";
+export const counselorLocution =
+  "No sé por qué, pero creo que voy a morir pronto";
+export const squireLocution = "Soy un loser";
 
 export const createKing = (
   character: CharacterWithoutMethodsAndStatus,

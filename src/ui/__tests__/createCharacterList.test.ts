@@ -1,7 +1,5 @@
-import { kingLocution } from "../../characters/data/characters";
 import { createKing } from "../../characters/factories/factories";
-
-import { createCharacterList } from "../characterList.js";
+import { createCharacterList } from "../characterList";
 
 describe("Given the createCharacterList", () => {
   describe("When it receive a list of with the King Clara Fraga", () => {
