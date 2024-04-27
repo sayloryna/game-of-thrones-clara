@@ -1,25 +1,27 @@
 import {
   type Character,
-  type CharacterWithoutMethods,
+  type CharacterWithoutMethodsAndStatus,
   type Counselor,
-  counselorLocution,
   type Fighter,
-  fighterLocution,
   type King,
-  kingLocution,
   type Level,
   type Squire,
-  squireLocution,
 } from "../../types.js";
+import {
+  counselorLocution,
+  fighterLocution,
+  kingLocution,
+  squireLocution,
+} from "../data/characters.js";
 
 export const createKing = (
-  character: CharacterWithoutMethods,
+  character: CharacterWithoutMethodsAndStatus,
   totalReignYears: number,
 ): King => ({
   name: character.name,
   familyName: character.familyName,
   age: character.age,
-  locution: kingLocution,
+  photoSrc: character.photoSrc,
   isAlive: true,
   totalReignYears,
   die(this: King) {
@@ -31,7 +33,7 @@ export const createKing = (
 });
 
 export const createFighter = (
-  character: CharacterWithoutMethods,
+  character: CharacterWithoutMethodsAndStatus,
   weapon: string,
   dexterityLevel: Level,
 ): Fighter => ({
@@ -39,7 +41,7 @@ export const createFighter = (
   familyName: character.familyName,
   age: character.age,
   isAlive: true,
-  locution: fighterLocution,
+  photoSrc: character.photoSrc,
   weapon,
   dexterityLevel,
   die(this: Fighter) {
@@ -51,7 +53,7 @@ export const createFighter = (
 });
 
 export const createSquire = (
-  character: CharacterWithoutMethods,
+  character: CharacterWithoutMethodsAndStatus,
   master: Fighter,
   grovellingLevel: Level,
 ): Squire => ({
@@ -59,7 +61,7 @@ export const createSquire = (
   familyName: character.familyName,
   age: character.age,
   isAlive: true,
-  locution: squireLocution,
+  photoSrc: character.photoSrc,
   master,
   grovellingLevel,
   die(this: Squire) {
@@ -71,14 +73,14 @@ export const createSquire = (
 });
 
 export const createCounselor = (
-  character: CharacterWithoutMethods,
+  character: CharacterWithoutMethodsAndStatus,
   counselledCharacter: Character,
 ): Counselor => ({
   name: character.name,
   familyName: character.familyName,
   age: character.age,
   isAlive: true,
-  locution: counselorLocution,
+  photoSrc: character.photoSrc,
   counselledCharacter,
   die(this: Counselor) {
     this.isAlive = false;

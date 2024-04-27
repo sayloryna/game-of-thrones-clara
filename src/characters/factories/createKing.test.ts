@@ -1,18 +1,14 @@
-import {
-  type CharacterWithoutMethods,
-  type King,
-  kingLocution,
-} from "../../types.js";
-import { createKing } from "./factories.js";
+import { type CharacterWithoutMethodsAndStatus, type King } from "../../types";
+import { createKing } from "./factories";
 
 describe("Given the createKing function", () => {
-  describe("When it receives 'Clara', 'Fraga', 23, a kingLocution and 45 years of reign ", () => {
+  describe("When it receives 'Clara', 'Fraga', 23 and 45 years of reign ", () => {
     test("Then it should return an alive 23 years old King named clara Fraga", () => {
-      const characterData: CharacterWithoutMethods = {
+      const characterData: CharacterWithoutMethodsAndStatus = {
         name: "Clara",
         familyName: "Fraga",
         age: 23,
-        locution: kingLocution,
+        photoSrc: "",
       };
       const totalReignYears = 45;
 
@@ -20,7 +16,7 @@ describe("Given the createKing function", () => {
         name: "Clara",
         familyName: "Fraga",
         age: 23,
-        locution: kingLocution,
+        photoSrc: "",
         totalReignYears: 45,
         isAlive: true,
       };

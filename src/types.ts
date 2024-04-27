@@ -6,23 +6,17 @@ export type Locution =
   | "No sé por qué, pero creo que voy a morir pronto"
   | "Soy un loser";
 
-export const kingLocution = "Vais a morir todos";
-export const fighterLocution = "Primero pego y luego pregunto";
-export const counselorLocution =
-  "No sé por qué, pero creo que voy a morir pronto";
-export const squireLocution = "Soy un loser";
-
 export interface Character {
   name: string;
   familyName: string;
   age: number;
-  locution: Locution;
+  photoSrc: string;
   isAlive: boolean;
   die: () => void;
   speak: () => Locution;
 }
 
-export type CharacterWithoutMethods = Omit<
+export type CharacterWithoutMethodsAndStatus = Omit<
   Character,
   "speak" | "die" | "isAlive"
 >;
