@@ -10,12 +10,21 @@ export const createCharacterCard = (character: Character) => {
   characterPhoto.width = 300;
   characterPhoto.height = 255;
 
+  const characterMainDataContainer = document.createElement("div");
+  characterMainDataContainer.classList.add("character__main-data");
+
   const characterName = document.createElement("h2");
   characterName.classList.add("character__name");
   characterName.textContent = `${character.name} ${character.familyName}`;
 
+  const characterAge = document.createElement("p");
+  characterAge.classList.add("character__age");
+  characterAge.textContent = `age: ${character.age}`;
+
   characterElement.appendChild(characterPhoto);
-  characterElement.appendChild(characterName);
+  characterMainDataContainer.appendChild(characterName);
+  characterMainDataContainer.appendChild(characterAge);
+  characterElement.appendChild(characterMainDataContainer);
 
   return characterElement;
 };
