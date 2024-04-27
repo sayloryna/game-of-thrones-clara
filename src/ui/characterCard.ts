@@ -8,7 +8,7 @@ export const createCharacterCard = (character: Character) => {
   characterPhoto.classList.add("character__photo");
   characterPhoto.src = character.photoSrc;
   characterPhoto.width = 300;
-  characterPhoto.height = 400;
+  characterPhoto.height = 255;
 
   const characterName = document.createElement("h2");
   characterName.classList.add("character__name");
