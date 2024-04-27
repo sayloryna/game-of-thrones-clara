@@ -1,23 +1,16 @@
 import {
   createFighter,
   createKing,
-  createSquire,
   createCounselor,
+  createSquire,
 } from "../factories/factories.js";
-import {
-  kingLocution,
-  fighterLocution,
-  counselorLocution,
-  squireLocution,
-} from "../../types.js";
-import { type Fighter } from "../../types.js";
 
-export const daenerysTargaryen: Fighter = createFighter(
+const daenerysTargaryen = createFighter(
   {
     name: "Daenerys",
     familyName: "Targaryen",
     age: 23,
-    locution: fighterLocution,
+    photoSrc: "images/characters-img/daenerys.webp",
   },
   "Drogon",
   8,
@@ -28,29 +21,39 @@ const jaimeLannister = createFighter(
     name: "Jaime",
     familyName: "Lannister",
     age: 34,
-    locution: fighterLocution,
+    photoSrc: "images/characters-img/jaime.webp",
   },
   "Lamento de Viuda",
   9,
 );
 
 const joffreyBaratheon = createKing(
-  { name: "Joffrey", familyName: "Lannister", age: 14, locution: kingLocution },
+  {
+    name: "Joffrey",
+    familyName: "Lannister",
+    age: 14,
+    photoSrc: "images/characters-img/joffrey.webp",
+  },
   2,
 );
 
-export const tyrionLannister = createCounselor(
+const tyrionLannister = createCounselor(
   {
     name: "Tyrion",
     familyName: "Lannister",
     age: 40,
-    locution: counselorLocution,
+    photoSrc: "images/characters-img/tyrion.webp",
   },
   daenerysTargaryen,
 );
 
 const bronn = createSquire(
-  { name: "Bronn", familyName: "", age: 33, locution: squireLocution },
+  {
+    name: "Bronn",
+    familyName: "",
+    age: 33,
+    photoSrc: "images/characters-img/bronn.webp",
+  },
   jaimeLannister,
   5,
 );

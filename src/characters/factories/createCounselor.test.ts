@@ -1,43 +1,38 @@
 import {
-  counselorLocution,
+  type CharacterWithoutMethodsAndStatus,
   type Fighter,
-  fighterLocution,
-  type CharacterWithoutMethods,
   type Counselor,
-} from "../../types.js";
-import { createCounselor } from "./factories.js";
+} from "../../types";
+
+import { createCounselor, createFighter } from "./factories";
 
 describe("Given a createCounselor function", () => {
   describe("When it receives a 23 years old character named Clara Fraga,  who counsels another character", () => {
     test("Then it should return a 23 YO counselor named Clara Fraga and cousels another character", () => {
-      const character: CharacterWithoutMethods = {
+      const character: CharacterWithoutMethodsAndStatus = {
         name: "Clara",
         familyName: "Fraga",
         age: 23,
-        locution: counselorLocution,
+        photoSrc: "",
       };
 
-      const counselledCharacter: Fighter = {
-        name: "Daenerys",
-        familyName: "Targaryen",
-        age: 23,
-        isAlive: true,
-        locution: fighterLocution,
-        weapon: "Drogon",
-        dexterityLevel: 0,
-        die(this: Counselor) {
-          this.isAlive = false;
+      const counselledCharacter = createFighter(
+        {
+          name: "daenerys",
+          familyName: "",
+          age: 5,
+          photoSrc: "",
         },
-        speak() {
-          return counselorLocution;
-        },
-      };
+        "espassa",
+        5,
+      );
+
       const expectedCounselor: Omit<Counselor, "speak" | "die"> = {
         name: "Clara",
         familyName: "Fraga",
         age: 23,
         isAlive: true,
-        locution: counselorLocution,
+        photoSrc: "",
         counselledCharacter,
       };
       const counselor = createCounselor(character, counselledCharacter);
