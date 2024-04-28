@@ -47,6 +47,10 @@ const addCharacterPhoto = (character: Character): HTMLImageElement => {
   characterPhoto.width = 300;
   characterPhoto.height = 255;
   characterPhoto.alt = `${character.name} ${character.familyName}`;
+  if (!character.isAlive) {
+    characterPhoto.classList.add("character__photo--dead");
+  }
+
   return characterPhoto;
 };
 

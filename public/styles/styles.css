@@ -79,3 +79,7 @@ li {
   right: 10px;
   bottom: 10px;
 }
+
+.character__photo--dead {
+  transform: rotate(180deg);
+}
