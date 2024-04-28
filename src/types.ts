@@ -44,6 +44,6 @@ export interface MegaCharacter extends Character {
   dexterityLevel: Level;
   totalReignYears: number;
   counselledCharacter: Character;
-  master: Fighter;
+  master?: Fighter;
   grovellingLevel: Level;
 }
