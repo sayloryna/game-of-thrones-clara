@@ -26,7 +26,8 @@ li {
 
 .main-container {
   margin: 0 auto;
-  padding: 1rem;
+  width: 75vw;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,12 +37,10 @@ li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 4rem;
-  padding: 15px;
+  padding: 16px;
 }
 
 .character {
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   width: 18.75rem;
   height: 25rem;
@@ -51,14 +50,20 @@ li {
 }
 
 .character__main-data {
-  padding: 15px;
+  padding: 16px;
   height: 75%;
   background-color: #331e0e;
 }
 
+.character__status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .main-header {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .main-title {

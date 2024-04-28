@@ -23,7 +23,7 @@ export const createCharacterCard = (character: Character) => {
 
   const characterStatus = document.createElement("div");
   characterStatus.classList.add("character__status");
-  characterStatus.textContent = "Status: ";
+  characterStatus.textContent = "Status:";
   const characterIconSrc = character.isAlive
     ? "images/icons/thumb-up-fill.svg"
     : "images/icons/thumb-down-fill.svg";
