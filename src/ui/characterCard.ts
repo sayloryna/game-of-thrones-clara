@@ -22,7 +22,7 @@ export const createCharacterCard = (character: Character) => {
   const statusIcon = getStatusIcon(character);
 
   characterStatus.classList.add("character__status");
-  characterStatus.textContent = "Status:";
+  characterStatus.textContent = "State:";
 
   const characterMark = document.createElement("div");
   characterMark.classList.add("character__mark");
