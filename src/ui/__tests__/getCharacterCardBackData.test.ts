@@ -7,7 +7,7 @@ import {
 import {
   type CharacterWithoutMethodsAndStatus,
   type MegaCharacter,
-} from "../../types";
+} from "../../types.js";
 import { getCharacterCardBackData } from "../characterBack.js";
 
 describe("Given the createCharacterCardBack function", () => {
