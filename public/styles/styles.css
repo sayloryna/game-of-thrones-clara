@@ -16,7 +16,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+p {
   margin: 0;
 }
 
@@ -62,9 +63,18 @@ li {
 }
 
 .character__main-data {
+  display: flex;
+  flex-direction: column;
   padding: 16px;
   height: 75%;
   background-color: #331e0e;
+}
+
+.character__name {
+  margin-bottom: 27px;
+}
+.character__age {
+  margin-bottom: 12px;
 }
 
 .character__status {
@@ -78,4 +88,30 @@ li {
   font-size: 1.5rem;
   right: 10px;
   bottom: 10px;
+}
+
+.character__back {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 300px;
+  height: 400px;
+  background-color: #111;
+  padding: 16px;
+  opacity: 0%;
+  color: #fff;
+}
+
+.character__back:hover {
+  opacity: 80%;
+}
+
+.character__extra-data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.character__photo--dead {
+  transform: rotate(180deg);
 }
