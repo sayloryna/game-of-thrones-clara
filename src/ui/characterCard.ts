@@ -56,6 +56,10 @@ const getStatusIcon = (character: Character): HTMLImageElement => {
     : "images/icons/thumb-down-fill.svg";
 
   const statusIcon = document.createElement("img");
+  statusIcon.alt =
+    characterIconSrc === "images/icons/thumb-up-fill.svg"
+      ? "thumbs-up hand"
+      : "thumbs-down hand";
   statusIcon.src = characterIconSrc;
   statusIcon.width = 25;
   statusIcon.height = 25;
