@@ -1,6 +1,7 @@
 :root {
   --main-background: #b9540c;
 }
+
 *,
 ::after,
 ::before {
@@ -33,6 +34,15 @@ li {
   align-items: center;
 }
 
+.main-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.main-title {
+  font-weight: 700;
+  font-size: 4rem;
+}
 .characters {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -41,9 +51,10 @@ li {
 }
 
 .character {
+  position: relative;
   overflow: hidden;
-  width: 18.75rem;
-  height: 25rem;
+  width: 300px;
+  height: 400px;
   background-color: #331e0e;
   border: 1px solid #333;
   border-radius: 10px;
@@ -61,12 +72,9 @@ li {
   gap: 5px;
 }
 
-.main-header {
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.main-title {
-  font-weight: 700;
-  font-size: 4rem;
+.character__mark {
+  position: absolute;
+  font-size: 1.5rem;
+  right: 10px;
+  bottom: 10px;
 }
