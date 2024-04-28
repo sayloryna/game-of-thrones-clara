@@ -22,9 +22,23 @@ export const createCharacterCard = (character: Character) => {
   characterAge.classList.add("character__age");
   characterAge.textContent = `Age: ${character.age} years`;
 
+  const characterStatus = document.createElement("div");
+  characterStatus.classList.add("character__status");
+  characterStatus.textContent = "Status:";
+  const characterIconSrc = character.isAlive
+    ? "images/icons/thumb-up-fill.svg"
+    : "images/icons/thumb-down-fill.svg";
+
+  const statusIcon = document.createElement("img");
+  statusIcon.src = characterIconSrc;
+  statusIcon.width = 25;
+  statusIcon.height = 25;
+
   characterElement.appendChild(characterPhoto);
+  characterStatus.appendChild(statusIcon);
   characterMainDataContainer.appendChild(characterName);
   characterMainDataContainer.appendChild(characterAge);
+  characterMainDataContainer.appendChild(characterStatus);
   characterElement.appendChild(characterMainDataContainer);
 
   return characterElement;
