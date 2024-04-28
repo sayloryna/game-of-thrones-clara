@@ -31,7 +31,7 @@ describe("Given the createCharacterCardBack function", () => {
   });
 
   describe("When it receives a fighter holding an Axe with a dexterity of 10", () => {
-    test("Then it should return 'Weapon: Axe' and 'Dexterity: 10'", () => {
+    test(`Then it should return "Weapon: 'Axe'" and "Dexterity: 10"`, () => {
       const fighter = createFighter(
         {
           name: "",
@@ -42,12 +42,17 @@ describe("Given the createCharacterCardBack function", () => {
         "Axe",
         10,
       );
-      const expectedText = `Weapon: Axe
-    Dexterity: 10`;
+      const weaponText = `Weapon: "Axe"`;
+      const dexterityText = `Dexterity: 10`;
+      const expectedTotalExtraData = 2;
 
       const cardback = getCharacterCardBackData(fighter);
+      const fighterExtraDatas = cardback.querySelectorAll("p");
 
-      expect(cardback.textContent).toBe(expectedText);
+      expect(fighterExtraDatas).toHaveLength(expectedTotalExtraData);
+
+      expect(fighterExtraDatas[0].textContent).toBe(weaponText);
+      expect(fighterExtraDatas[1].textContent).toBe(dexterityText);
     });
   });
 
@@ -73,12 +78,17 @@ describe("Given the createCharacterCardBack function", () => {
         fighterPaco,
         10,
       );
-      const expectedText = `Ballism level: 10 
-    Serves to: Paco Porras`;
+
+      const ballismText = `Ballism level: 10`;
+      const masterText = `Serves to: Paco Porras`;
+      const expectedTotalExtraData = 2;
 
       const cardback = getCharacterCardBackData(squire);
+      const squireExtraDatas = cardback.querySelectorAll("p");
 
-      expect(cardback.textContent).toBe(expectedText);
+      expect(squireExtraDatas).toHaveLength(expectedTotalExtraData);
+      expect(squireExtraDatas[0].textContent).toBe(ballismText);
+      expect(squireExtraDatas[1].textContent).toBe(masterText);
     });
   });
 
