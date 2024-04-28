@@ -6,7 +6,9 @@ export const createCharacterList = (characters: Character[]) => {
   charactersList.classList.add("characters");
 
   characters.forEach((character) => {
-    charactersList.appendChild(createCharacterCard(character));
+    const characterElement = document.createElement("li");
+    characterElement.appendChild(createCharacterCard(character));
+    charactersList.appendChild(characterElement);
   });
 
   return charactersList;

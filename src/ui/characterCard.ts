@@ -1,7 +1,7 @@
 import { type Character } from "../types";
 
 export const createCharacterCard = (character: Character) => {
-  const characterElement = document.createElement("li");
+  const characterElement = document.createElement("div");
   characterElement.classList.add("character");
 
   const characterPhoto = addCharacterPhoto(character);
@@ -23,11 +23,16 @@ export const createCharacterCard = (character: Character) => {
   characterStatus.classList.add("character__status");
   characterStatus.textContent = "Status:";
 
+  const characterMark = document.createElement("div");
+  characterMark.classList.add("character__mark");
+  characterMark.innerText = getCharacterKindMark(character);
+
   characterStatus.appendChild(statusIcon);
 
   characterMainDataContainer.appendChild(characterName);
   characterMainDataContainer.appendChild(characterAge);
   characterMainDataContainer.appendChild(characterStatus);
+  characterMainDataContainer.appendChild(characterMark);
 
   characterElement.appendChild(characterPhoto);
   characterElement.appendChild(characterMainDataContainer);

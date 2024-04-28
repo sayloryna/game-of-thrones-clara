@@ -18,7 +18,7 @@ describe("Given the createCharacterList", () => {
       const characterFullName = `${characters[0].name} ${characters[0].familyName}`;
 
       const characterlist = createCharacterList(characters);
-      const character = characterlist.querySelector("li")!;
+      const character = characterlist.querySelector(".character")!;
       const characterName = character.querySelector("h2")!;
 
       expect(character).not.toBeNull();
