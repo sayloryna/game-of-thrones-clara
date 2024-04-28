@@ -1,5 +1,4 @@
 import { characters } from "./characters/data/characters.js";
-
 import {
   renderCharacterList,
   renderMainCntainerWithHeader,

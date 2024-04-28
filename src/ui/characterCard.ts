@@ -9,6 +9,7 @@ export const createCharacterCard = (character: Character) => {
   characterPhoto.src = character.photoSrc;
   characterPhoto.width = 300;
   characterPhoto.height = 255;
+  characterPhoto.alt = `${character.name} ${character.familyName}`;
 
   const characterMainDataContainer = document.createElement("div");
   characterMainDataContainer.classList.add("character__main-data");
