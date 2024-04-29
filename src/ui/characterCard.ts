@@ -37,14 +37,18 @@ export const createCharacterCard = (character: Character) => {
 
   characterStatus.appendChild(statusIcon);
 
-  characterMainDataContainer.appendChild(characterName);
-  characterMainDataContainer.appendChild(characterAge);
-  characterMainDataContainer.appendChild(characterStatus);
-  characterMainDataContainer.appendChild(characterMark);
+  characterMainDataContainer.append(
+    characterName,
+    characterAge,
+    characterStatus,
+    characterMark,
+  );
 
-  characterCard.appendChild(characterPhoto);
-  characterCard.appendChild(characterMainDataContainer);
-  characterCard.appendChild(backDataContainer);
+  characterCard.append(
+    characterPhoto,
+    characterMainDataContainer,
+    backDataContainer,
+  );
 
   return characterCard;
 };
