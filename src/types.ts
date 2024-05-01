@@ -38,12 +38,3 @@ export interface Squire extends Character {
   master: Fighter;
   grovellingLevel: Level;
 }
-
-export interface MegaCharacter extends Character {
-  weapon: string;
-  dexterityLevel: Level;
-  totalReignYears: number;
-  counselledCharacter: Character;
-  master?: Fighter;
-  grovellingLevel: Level;
-}
