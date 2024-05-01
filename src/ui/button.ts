@@ -1,5 +1,3 @@
-import { type Character } from "../types";
-
 export const createButton = (
   className: string,
   text: string,
@@ -11,9 +9,3 @@ export const createButton = (
   button.textContent = text.toLowerCase();
   return button;
 };
-
-export const killCharacter = (character: Character) => {
-  character.die();
-};
-
-export const makeCharacterSpeak = (character: Character) => character.speak();
