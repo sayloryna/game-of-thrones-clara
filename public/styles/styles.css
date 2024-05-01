@@ -26,6 +26,16 @@ li {
   list-style: none;
 }
 
+button {
+  background: transparent;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .main-container {
   margin: 0 auto;
   width: 1150px;
@@ -96,20 +106,44 @@ li {
   top: 0px;
   width: 300px;
   height: 400px;
-  background-color: #111;
-  padding: 16px;
-  opacity: 0%;
+
   color: #fff;
 }
 
 .character__back:hover {
-  opacity: 80%;
+  .character__extra-data {
+    opacity: 80%;
+  }
+
+  .buttons {
+    opacity: 100%;
+  }
 }
 
-.character__extra-data {
+.buttons {
+  opacity: 0%;
+  height: 145px;
+  background-color: #111;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.character__extra-data {
+  padding: 16px;
+  background-color: #111;
+  height: 255px;
+  opacity: 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button {
+  background-color: #67331e;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 .character__photo {

@@ -22,4 +22,15 @@ describe("Given the createButton", () => {
       expect(buttonClass).toBe(classButton);
     });
   });
+
+  describe("When it receives the text 'Eto es un Botton' ", () => {
+    test("Then it should return a buton with the text 'eto es un botton", () => {
+      const text = "Eto es un Botton";
+      const buttonText = "eto es un botton";
+
+      const button = createButton("clase", text);
+
+      expect(button.textContent).toBe(buttonText);
+    });
+  });
 });

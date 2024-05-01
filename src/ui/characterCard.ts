@@ -34,10 +34,15 @@ export const createCharacterCard = (character: Character) => {
   backDataContainer.classList.add("character__back");
   backData.classList.add("character__extra-data");
 
-  const dieButton = createButton("button__die", "die");
-  const speakButton = createButton("button__speak", "speak");
+  const buttons = document.createElement("div");
+  buttons.classList.add("buttons");
 
-  backDataContainer.append(backData, dieButton, speakButton);
+  const speakButton = createButton("button__speak", "speak");
+  const dieButton = createButton("button__die", "die");
+
+  buttons.append(speakButton, dieButton);
+
+  backDataContainer.append(backData, buttons);
 
   characterStatus.appendChild(statusIcon);
 
