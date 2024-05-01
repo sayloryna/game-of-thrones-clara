@@ -54,6 +54,7 @@ button {
   font-weight: 700;
   font-size: 4rem;
 }
+
 .characters {
   display: grid;
   justify-content: center;
@@ -65,24 +66,38 @@ button {
 .character {
   position: relative;
   overflow: hidden;
-  width: 300px;
-  height: 400px;
   background-color: #331e0e;
   border-radius: 5px;
   box-shadow: 3px 3px 6px #111;
+}
+
+.button {
+  background-color: #67331e;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.character__buttons {
+  opacity: 0%;
+  height: 145px;
+  background-color: #111;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .character__main-data {
   display: flex;
   flex-direction: column;
   padding: 16px;
-  height: 75%;
   background-color: #331e0e;
 }
 
 .character__name {
   margin-bottom: 27px;
 }
+
 .character__age {
   margin-bottom: 12px;
 }
@@ -120,38 +135,21 @@ button {
 }
 
 .character__extra-data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding: 16px;
   background-color: #111;
   height: 255px;
   opacity: 0%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .character__locution {
   text-align: center;
   background-color: #555;
   border-radius: 15px;
-  padding: 16px;
+  padding: 10px;
   font-size: 1.2rem;
-  font-style: italic;
-}
-
-.buttons {
-  opacity: 0%;
-  height: 145px;
-  background-color: #111;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.button {
-  background-color: #67331e;
-  padding: 15px;
-  border-radius: 5px;
 }
 
 .character__photo {
