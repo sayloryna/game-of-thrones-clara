@@ -13,6 +13,7 @@ export const createMainContainer = () => {
 export const renderMainCntainerWithHeader = (heading: string) => {
   const mainContainer = createMainContainer();
   const mainHeader = createHeader(heading);
+  const main = document.createElement("main");
   const root = document.querySelector(".root");
 
   if (!root) {
@@ -20,18 +21,19 @@ export const renderMainCntainerWithHeader = (heading: string) => {
   }
 
   mainHeader.classList.add("main-header");
+  main.classList.add("main-content");
 
-  mainContainer.appendChild(mainHeader);
+  mainContainer.append(mainHeader, main);
 
   root.appendChild(mainContainer);
 };
 
 export const renderCharacterList = (characters: Character[]) => {
-  const mainContainer = document.querySelector(".main-container");
+  const main = document.querySelector(".main-content");
 
-  if (!mainContainer) {
+  if (!main) {
     throw Error("Element not found");
   }
 
-  mainContainer.appendChild(createCharacterList(characters));
+  main.appendChild(createCharacterList(characters));
 };
