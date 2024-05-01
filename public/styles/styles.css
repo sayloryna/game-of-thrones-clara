@@ -106,28 +106,17 @@ button {
   top: 0px;
   width: 300px;
   height: 400px;
-
   color: #fff;
 }
 
 .character__back:hover {
   .character__extra-data {
-    opacity: 80%;
+    opacity: 85%;
   }
 
   .buttons {
     opacity: 100%;
   }
-}
-
-.buttons {
-  opacity: 0%;
-  height: 145px;
-  background-color: #111;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .character__extra-data {
@@ -138,6 +127,25 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.character__locution {
+  text-align: center;
+  background-color: #555;
+  border-radius: 15px;
+  padding: 16px;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.buttons {
+  opacity: 0%;
+  height: 145px;
+  background-color: #111;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .button {

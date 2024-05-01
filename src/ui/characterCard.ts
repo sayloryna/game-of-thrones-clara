@@ -38,6 +38,26 @@ export const createCharacterCard = (character: Character) => {
   buttons.classList.add("buttons");
 
   const speakButton = createButton("button__speak", "speak");
+
+  speakButton.addEventListener("click", () => {
+    const characterHasSpoken = backDataContainer.querySelector(".has-spoken");
+
+    if (characterHasSpoken) {
+      return;
+    }
+
+    const locution = character.speak();
+
+    const locutionCointainer = document.createElement("span");
+
+    locutionCointainer.classList.add("character__locution");
+    locutionCointainer.classList.add("has-spoken");
+
+    locutionCointainer.textContent = `"${locution}"`;
+
+    backData.appendChild(locutionCointainer);
+  });
+
   const dieButton = createButton("button__die", "die");
 
   buttons.append(speakButton, dieButton);
