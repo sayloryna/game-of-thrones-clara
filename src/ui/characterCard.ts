@@ -2,7 +2,7 @@ import { type Character } from "../types";
 import { getCharacterCardBackData } from "./characterBack.js";
 
 export const createCharacterCard = (character: Character) => {
-  const characterCard = document.createElement("div");
+  const characterCard = document.createElement("article");
   characterCard.classList.add("character");
 
   const characterPhoto = addCharacterPhoto(character);
