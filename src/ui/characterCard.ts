@@ -1,4 +1,3 @@
-import { createAction } from "node-git-server";
 import { type Character } from "../types";
 import { createButton } from "./button.js";
 import { getCharacterCardBackData } from "./characterBack.js";
@@ -36,7 +35,7 @@ export const createCharacterCard = (character: Character) => {
   backData.classList.add("character__extra-data");
 
   const buttons = document.createElement("div");
-  buttons.classList.add("buttons");
+  buttons.classList.add("character__buttons");
 
   const speakButton = createButton("button__speak", "speak");
 
