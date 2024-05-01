@@ -1,37 +1,43 @@
-import { type MegaCharacter } from "../types";
+import {
+  type Fighter,
+  type Character,
+  type King,
+  type Counselor,
+  type Squire,
+} from "../types";
 
-export const getCharacterCardBackData = (character: Partial<MegaCharacter>) => {
+export const getCharacterCardBackData = (character: Character) => {
   const cardBack = document.createElement("div");
 
-  if (Object.hasOwn(character, "totalReignYears")) {
+  if ("totalReignYears" in character) {
     const reignYears = document.createElement("p");
-    reignYears.textContent = `Years of reign: ${character.totalReignYears}`;
+    reignYears.textContent = `Years of reign: ${(character as King).totalReignYears}`;
     cardBack.appendChild(reignYears);
   }
 
-  if (Object.hasOwn(character, "weapon")) {
+  if ("weapon" in character) {
     const weapon = document.createElement("p");
     const dexterity = document.createElement("p");
 
-    weapon.textContent = `Weapon: "${character.weapon}"`;
-    dexterity.textContent = `Dexterity: ${character.dexterityLevel}`;
+    weapon.textContent = `Weapon: "${(character as Fighter).weapon}"`;
+    dexterity.textContent = `Dexterity: ${(character as Fighter).dexterityLevel}`;
 
     cardBack.append(weapon, dexterity);
   }
 
-  if (Object.hasOwn(character, "master")) {
-    const ballism = document.createElement("p");
+  if ("master" in character) {
+    const grovelling = document.createElement("p");
     const master = document.createElement("p");
 
-    ballism.textContent = `Ballism level: ${character.grovellingLevel}`;
-    master.textContent = `Serves to: ${character.master?.name} ${character.master?.familyName}`;
+    grovelling.textContent = `Ballism level: ${(character as Squire).grovellingLevel}`;
+    master.textContent = `Serves to: ${(character as Squire).master?.name} ${(character as Squire).master?.familyName}`;
 
-    cardBack.append(ballism, master);
+    cardBack.append(grovelling, master);
   }
 
-  if (Object.hasOwn(character, "counselledCharacter")) {
+  if ("counselledCharacter" in character) {
     const counselledCharacter = document.createElement("p");
-    counselledCharacter.textContent = `Advises to: ${character.counselledCharacter?.name} ${character.counselledCharacter?.familyName}`;
+    counselledCharacter.textContent = `Advises to: ${(character as Counselor).counselledCharacter?.name} ${(character as Counselor).counselledCharacter?.familyName}`;
     cardBack.appendChild(counselledCharacter);
   }
 

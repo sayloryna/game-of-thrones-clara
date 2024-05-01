@@ -3,17 +3,19 @@ import {
   createFighter,
   createKing,
   createSquire,
+  kingLocution,
 } from "../../characters/factories/factories.js";
 import {
+  type King,
   type CharacterWithoutMethodsAndStatus,
-  type MegaCharacter,
+  type Character,
 } from "../../types.js";
 import { getCharacterCardBackData } from "../characterBack.js";
 
 describe("Given the createCharacterCardBack function", () => {
   describe("When it receives a king character who has reign for 5 years", () => {
     test("Then it should return 'Years of reign 5' ", () => {
-      const king: Partial<MegaCharacter> = createKing(
+      const king: King = createKing(
         {
           name: "",
           familyName: "",
@@ -117,11 +119,18 @@ describe("Given the createCharacterCardBack function", () => {
 
   describe("When it receives a plain character", () => {
     test("Then it should return an empty text", () => {
-      const character: CharacterWithoutMethodsAndStatus = {
+      const character: Character = {
         name: "",
         familyName: "",
         age: 10,
         photoSrc: "",
+        isAlive: true,
+        die() {
+          this.isAlive = false;
+        },
+        speak() {
+          return kingLocution;
+        },
       };
 
       const expectedText = "";
