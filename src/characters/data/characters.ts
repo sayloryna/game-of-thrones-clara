@@ -1,3 +1,4 @@
+import { type Character } from "../../types.js";
 import {
   createFighter,
   createKing,
@@ -65,3 +66,10 @@ export const characters = [
   daenerysTargaryen,
   bronn,
 ];
+
+export const getCharacters = async (characters: Character[]) =>
+  new Promise<Character[]>((resolve) => {
+    setTimeout(() => {
+      resolve(characters);
+    }, 3000);
+  });

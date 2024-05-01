@@ -1,8 +1,11 @@
-import { characters } from "./characters/data/characters.js";
+import { characters, getCharacters } from "./characters/data/characters.js";
 import {
   renderCharacterList,
-  renderMainCntainerWithHeader,
+  renderMainContainerWithHeader,
 } from "./ui/index.js";
 
-renderMainCntainerWithHeader("Game of Thrones");
-renderCharacterList(characters);
+renderMainContainerWithHeader("Game of Thrones");
+
+const delayedCharacters = await getCharacters(characters);
+
+renderCharacterList(delayedCharacters);

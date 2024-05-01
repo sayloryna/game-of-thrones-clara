@@ -1,4 +1,6 @@
+import { characters, getCharacters } from "../characters/data/characters.js";
 import { type Character } from "../types.js";
+
 import { createCharacterList } from "./characterList.js";
 import { createHeader } from "./mainHeader.js";
 
@@ -10,7 +12,7 @@ export const createMainContainer = () => {
   return mainContainer;
 };
 
-export const renderMainCntainerWithHeader = (heading: string) => {
+export const renderMainContainerWithHeader = (heading: string) => {
   const mainContainer = createMainContainer();
   const mainHeader = createHeader(heading);
   const main = document.createElement("main");
