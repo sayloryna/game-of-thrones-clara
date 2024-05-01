@@ -40,11 +40,9 @@ export const createCharacterCard = (character: Character) => {
   const speakButton = createButton("button__speak", "speak");
 
   speakButton.addEventListener("click", () => {
-    const characterHasSpoke = document.querySelector(
-      `.character__locution--${character.name}`,
-    );
+    const characterHasSpoken = backDataContainer.querySelector(".has-spoken");
 
-    if (characterHasSpoke) {
+    if (characterHasSpoken) {
       return;
     }
 
@@ -53,9 +51,9 @@ export const createCharacterCard = (character: Character) => {
     const locutionCointainer = document.createElement("span");
 
     locutionCointainer.classList.add("character__locution");
-    locutionCointainer.classList.add(`character__locution--${character.name}`);
+    locutionCointainer.classList.add("has-spoken");
 
-    locutionCointainer.textContent = `${character.name} says: ${locution}`;
+    locutionCointainer.textContent = `"${locution}"`;
 
     backData.appendChild(locutionCointainer);
   });
