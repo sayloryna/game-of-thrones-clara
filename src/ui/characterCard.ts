@@ -1,4 +1,5 @@
 import { type Character } from "../types";
+import { createButton } from "./button.js";
 import { getCharacterCardBackData } from "./characterBack.js";
 
 export const createCharacterCard = (character: Character) => {
@@ -33,7 +34,10 @@ export const createCharacterCard = (character: Character) => {
   backDataContainer.classList.add("character__back");
   backData.classList.add("character__extra-data");
 
-  backDataContainer.appendChild(backData);
+  const dieButton = createButton("button__die", "die");
+  const speakButton = createButton("button__speak", "speak");
+
+  backDataContainer.append(backData, dieButton, speakButton);
 
   characterStatus.appendChild(statusIcon);
 

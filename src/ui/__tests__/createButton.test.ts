@@ -4,11 +4,8 @@ describe("Given the createButton", () => {
   describe("When its called", () => {
     test("then it should return a button", () => {
       const expectedTagName = "BUTTON";
-      const testFunction = () => {
-        console.log("miau");
-      };
 
-      const buttonTagName = createButton("patata", testFunction).tagName;
+      const buttonTagName = createButton("miau", "miau").tagName;
 
       expect(buttonTagName).toBe(expectedTagName);
     });
@@ -18,11 +15,7 @@ describe("Given the createButton", () => {
     test("Then it should return a button with a class 'button", () => {
       const classButton = "button";
 
-      const testFunction = () => {
-        console.log("miau");
-      };
-
-      const button = createButton(classButton, testFunction);
+      const button = createButton(classButton, "miau");
 
       const buttonClass = button.classList.toString();
 
