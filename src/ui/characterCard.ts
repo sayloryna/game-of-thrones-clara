@@ -1,3 +1,4 @@
+import { createAction } from "node-git-server";
 import { type Character } from "../types";
 import { createButton } from "./button.js";
 import { getCharacterCardBackData } from "./characterBack.js";
@@ -20,7 +21,7 @@ export const createCharacterCard = (character: Character) => {
   characterAge.textContent = `Age: ${character.age} years`;
 
   const characterStatus = document.createElement("div");
-  const statusIcon = getStatusIcon(character);
+  let statusIcon = getStatusIcon(character);
 
   characterStatus.classList.add("character__status");
   characterStatus.textContent = "State:";
@@ -53,12 +54,23 @@ export const createCharacterCard = (character: Character) => {
     locutionCointainer.classList.add("character__locution");
     locutionCointainer.classList.add("has-spoken");
 
-    locutionCointainer.textContent = `"${locution}"`;
+    locutionCointainer.textContent = character.isAlive
+      ? `${character.name} says: "${locution}"`
+      : `-Dead people can't speak-`;
 
     backData.appendChild(locutionCointainer);
   });
 
   const dieButton = createButton("button__die", "die");
+
+  dieButton.addEventListener("click", () => {
+    character.die();
+    characterPhoto.classList.add("character__photo--dead");
+    characterStatus.querySelector(".character__status-icon")?.remove();
+
+    statusIcon = getStatusIcon(character);
+    characterStatus.appendChild(statusIcon);
+  });
 
   buttons.append(speakButton, dieButton);
 
@@ -102,6 +114,7 @@ const getStatusIcon = (character: Character): HTMLImageElement => {
     : "images/icons/thumb-down-fill.svg";
 
   const statusIcon = document.createElement("img");
+  statusIcon.classList.add("character__status-icon");
   statusIcon.alt =
     characterIconSrc === "images/icons/thumb-up-fill.svg"
       ? "thumbs-up hand"
