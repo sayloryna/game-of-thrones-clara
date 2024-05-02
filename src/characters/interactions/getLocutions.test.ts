@@ -10,7 +10,7 @@ describe("Given the getLocutions function", (): void => {
           name: "daenerys",
           familyName: "",
           age: 5,
-          photoSrc: "",
+          photoSource: "",
         },
         "espassa",
         5,
@@ -20,7 +20,7 @@ describe("Given the getLocutions function", (): void => {
           name: "daenerys",
           familyName: "",
           age: 5,
-          photoSrc: "",
+          photoSource: "",
         },
         fighter,
       );

@@ -13,7 +13,7 @@ describe("Given a createCounselor function", () => {
         name: "Clara",
         familyName: "Fraga",
         age: 23,
-        photoSrc: "",
+        photoSource: "",
       };
 
       const counselledCharacter = createFighter(
@@ -21,7 +21,7 @@ describe("Given a createCounselor function", () => {
           name: "daenerys",
           familyName: "",
           age: 5,
-          photoSrc: "",
+          photoSource: "",
         },
         "espassa",
         5,
@@ -32,7 +32,7 @@ describe("Given a createCounselor function", () => {
         familyName: "Fraga",
         age: 23,
         isAlive: true,
-        photoSrc: "",
+        photoSource: "",
         counselledCharacter,
       };
       const counselor = createCounselor(character, counselledCharacter);

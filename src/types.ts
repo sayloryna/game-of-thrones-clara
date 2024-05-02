@@ -10,7 +10,7 @@ export interface Character {
   name: string;
   familyName: string;
   age: number;
-  photoSrc: string;
+  photoSource: string;
   isAlive: boolean;
   die: () => void;
   speak: () => Locution;
@@ -37,4 +37,8 @@ export interface Counselor extends Character {
 export interface Squire extends Character {
   master: Fighter;
   grovellingLevel: Level;
+}
+
+export interface CharactersResponse {
+  characters: Character[];
 }

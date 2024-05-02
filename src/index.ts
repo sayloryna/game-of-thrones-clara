@@ -1,4 +1,4 @@
-import { characters, getCharacters } from "./characters/data/characters.js";
+import { getCharacters } from "./characters/data/characters.js";
 import {
   renderCharacterList,
   renderMainContainerWithHeader,
@@ -6,6 +6,4 @@ import {
 
 renderMainContainerWithHeader("Game of Thrones");
 
-const delayedCharacters = await getCharacters(characters);
-
-renderCharacterList(delayedCharacters);
+renderCharacterList(await getCharacters());

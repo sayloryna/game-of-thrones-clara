@@ -21,7 +21,7 @@ export const createKing = (
   name: character.name,
   familyName: character.familyName,
   age: character.age,
-  photoSrc: character.photoSrc,
+  photoSource: character.photoSource,
   isAlive: true,
   totalReignYears,
   die(this: King) {
@@ -41,7 +41,7 @@ export const createFighter = (
   familyName: character.familyName,
   age: character.age,
   isAlive: true,
-  photoSrc: character.photoSrc,
+  photoSource: character.photoSource,
   weapon,
   dexterityLevel,
   die(this: Fighter) {
@@ -61,7 +61,7 @@ export const createSquire = (
   familyName: character.familyName,
   age: character.age,
   isAlive: true,
-  photoSrc: character.photoSrc,
+  photoSource: character.photoSource,
   master,
   grovellingLevel,
   die(this: Squire) {
@@ -80,7 +80,7 @@ export const createCounselor = (
   familyName: character.familyName,
   age: character.age,
   isAlive: true,
-  photoSrc: character.photoSrc,
+  photoSource: character.photoSource,
   counselledCharacter,
   die(this: Counselor) {
     this.isAlive = false;

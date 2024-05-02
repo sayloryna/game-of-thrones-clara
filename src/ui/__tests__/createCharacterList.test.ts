@@ -10,7 +10,7 @@ describe("Given the createCharacterList", () => {
             name: "Clara",
             familyName: "Fraga",
             age: 1,
-            photoSrc: "",
+            photoSource: "",
           },
           5,
         ),

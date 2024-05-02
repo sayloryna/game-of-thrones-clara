@@ -1,4 +1,3 @@
-import { characters, getCharacters } from "../characters/data/characters.js";
 import { type Character } from "../types.js";
 
 import { createCharacterList } from "./characterList.js";
