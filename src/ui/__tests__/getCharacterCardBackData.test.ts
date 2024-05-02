@@ -20,7 +20,7 @@ describe("Given the createCharacterCardBack function", () => {
           name: "",
           familyName: "",
           age: 5,
-          photoSrc: "",
+          photoSource: "",
         },
         5,
       );
@@ -39,7 +39,7 @@ describe("Given the createCharacterCardBack function", () => {
           name: "",
           familyName: "",
           age: 5,
-          photoSrc: "",
+          photoSource: "",
         },
         "Axe",
         10,
@@ -65,7 +65,7 @@ describe("Given the createCharacterCardBack function", () => {
           name: "Paco",
           familyName: "Porras",
           age: 5,
-          photoSrc: "",
+          photoSource: "",
         },
         "Axe",
         10,
@@ -75,7 +75,7 @@ describe("Given the createCharacterCardBack function", () => {
           name: "",
           familyName: "",
           age: 5,
-          photoSrc: "",
+          photoSource: "",
         },
         fighterPaco,
         10,
@@ -97,7 +97,7 @@ describe("Given the createCharacterCardBack function", () => {
   describe("When it receives a counselor that advises king Eric Cartman", () => {
     test("Then it should return 'Advises to: Eric Cartman'", () => {
       const kingEric = createKing(
-        { name: "Eric", familyName: "Cartman", age: 10, photoSrc: "" },
+        { name: "Eric", familyName: "Cartman", age: 10, photoSource: "" },
         9,
       );
       const counselor = createCounselor(
@@ -105,7 +105,7 @@ describe("Given the createCharacterCardBack function", () => {
           name: "",
           familyName: "",
           age: 10,
-          photoSrc: "",
+          photoSource: "",
         },
         kingEric,
       );
@@ -123,7 +123,7 @@ describe("Given the createCharacterCardBack function", () => {
         name: "",
         familyName: "",
         age: 10,
-        photoSrc: "",
+        photoSource: "",
         isAlive: true,
         die() {
           this.isAlive = false;

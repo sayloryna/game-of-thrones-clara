@@ -96,7 +96,7 @@ export const createCharacterCard = (character: Character) => {
 const addCharacterPhoto = (character: Character): HTMLImageElement => {
   const characterPhoto = document.createElement("img");
   characterPhoto.classList.add("character__photo");
-  characterPhoto.src = character.photoSrc;
+  characterPhoto.src = character.photoSource;
   characterPhoto.width = 300;
   characterPhoto.height = 255;
   characterPhoto.alt = `${character.name} ${character.familyName}`;

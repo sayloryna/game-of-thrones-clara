@@ -8,7 +8,7 @@ describe("Given the createKing function", () => {
         name: "Clara",
         familyName: "Fraga",
         age: 23,
-        photoSrc: "",
+        photoSource: "",
       };
       const totalReignYears = 45;
 
@@ -16,7 +16,7 @@ describe("Given the createKing function", () => {
         name: "Clara",
         familyName: "Fraga",
         age: 23,
-        photoSrc: "",
+        photoSource: "",
         totalReignYears: 45,
         isAlive: true,
       };
