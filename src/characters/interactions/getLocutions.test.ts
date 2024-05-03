@@ -1,5 +1,5 @@
 import { getLocutions } from "./interactions.js";
-import { type Character, type Locution } from "../../types.js";
+import { type Character, type Locution } from "../types.js";
 import { createCounselor, createFighter } from "../factories/factories.js";
 
 describe("Given the getLocutions function", (): void => {

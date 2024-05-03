@@ -6,7 +6,7 @@ import {
   createSquire,
   kingLocution,
 } from "../../characters/factories/factories.js";
-import { type Character } from "../../types.js";
+import { type Character } from "../../characters/types.js";
 import { getCharacterKindMark } from "../characterCard.js";
 
 describe("Given the getCharacterMark", () => {

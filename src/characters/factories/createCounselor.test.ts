@@ -2,7 +2,7 @@ import {
   type CharacterWithoutMethodsAndStatus,
   type Fighter,
   type Counselor,
-} from "../../types";
+} from "../types";
 
 import { createCounselor, createFighter } from "./factories";
 

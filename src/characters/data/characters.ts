@@ -1,7 +1,9 @@
-import { type CharactersResponse, type Character } from "../../types.js";
+import { type Characters, type Character } from "../types.js";
 export const getCharacters = async (): Promise<Character[]> => {
-  const response = await fetch("http://localhost:4000/characters");
-  const charactersResponse = (await response.json()) as CharactersResponse;
+  const response = await fetch(
+    "https://game-of-thrones-back-4.onrender.com/characters",
+  );
+  const { characters } = (await response.json()) as Characters;
 
-  return charactersResponse.characters;
+  return characters;
 };

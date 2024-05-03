@@ -39,6 +39,6 @@ export interface Squire extends Character {
   grovellingLevel: Level;
 }
 
-export interface CharactersResponse {
+export interface Characters {
   characters: Character[];
 }

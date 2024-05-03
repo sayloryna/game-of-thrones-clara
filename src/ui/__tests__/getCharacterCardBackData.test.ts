@@ -9,7 +9,7 @@ import {
   type King,
   type CharacterWithoutMethodsAndStatus,
   type Character,
-} from "../../types.js";
+} from "../../characters/types.js";
 import { getCharacterCardBackData } from "../characterBack.js";
 
 describe("Given the createCharacterCardBack function", () => {

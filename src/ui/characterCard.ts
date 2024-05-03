@@ -1,4 +1,4 @@
-import { type Character } from "../types";
+import { type Character } from "../characters/types";
 import { createButton } from "./button.js";
 import { getCharacterCardBackData } from "./characterBack.js";
 
