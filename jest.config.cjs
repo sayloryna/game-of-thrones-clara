@@ -4,5 +4,4 @@ module.exports = {
   testEnvironment: "jsdom",
   resolver: "jest-ts-webcompat-resolver",
   testMatch: ["**/src/**/*.test.ts"],
-  rootDir: "src/",
 };
