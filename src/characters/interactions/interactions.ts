@@ -1,4 +1,4 @@
-import { type Character, type Locution } from "../../types.js";
+import { type Character, type Locution } from "../types.js";
 
 export const getLocutions = (characters: Character[]) =>
   characters.map((persona) => persona.speak());

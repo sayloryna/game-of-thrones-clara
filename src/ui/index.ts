@@ -1,4 +1,4 @@
-import { type Character } from "../types.js";
+import { type Character } from "../characters/types.js";
 
 import { createCharacterList } from "./characterList.js";
 import { createHeader } from "./mainHeader.js";

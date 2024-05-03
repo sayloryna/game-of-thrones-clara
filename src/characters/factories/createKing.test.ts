@@ -1,4 +1,4 @@
-import { type CharacterWithoutMethodsAndStatus, type King } from "../../types";
+import { type CharacterWithoutMethodsAndStatus, type King } from "../types";
 import { createKing } from "./factories";
 
 describe("Given the createKing function", () => {

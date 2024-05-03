@@ -4,7 +4,7 @@ import {
   type King,
   type Counselor,
   type Squire,
-} from "../types";
+} from "../characters/types";
 
 export const getCharacterCardBackData = (character: Character) => {
   const cardBack = document.createElement("div");

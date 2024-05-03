@@ -6,7 +6,7 @@ import {
   type King,
   type Level,
   type Squire,
-} from "../../types.js";
+} from "../types.js";
 
 export const kingLocution = "Vais a morir todos";
 export const fighterLocution = "Primero pego y luego pregunto";
