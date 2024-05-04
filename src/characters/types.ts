@@ -7,6 +7,7 @@ export type Locution =
   | "Soy un loser";
 
 export interface Character {
+  id: string;
   name: string;
   familyName: string;
   age: number;
@@ -41,4 +42,8 @@ export interface Squire extends Character {
 
 export interface Characters {
   characters: Character[];
+}
+
+export interface LocutionResponse {
+  locution: Locution;
 }

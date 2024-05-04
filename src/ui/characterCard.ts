@@ -1,3 +1,4 @@
+import { speak } from "../characters/interactions/interactions.js";
 import { type Character } from "../characters/types";
 import { createButton } from "./button.js";
 import { getCharacterCardBackData } from "./characterBack.js";
@@ -39,14 +40,14 @@ export const createCharacterCard = (character: Character) => {
 
   const speakButton = createButton("button__speak", "speak");
 
-  speakButton.addEventListener("click", () => {
+  speakButton.addEventListener("click", async () => {
     const characterHasSpoken = backDataContainer.querySelector(".has-spoken");
 
     if (characterHasSpoken) {
       return;
     }
 
-    const locution = character.speak();
+    const locution = await speak(character);
 
     const locutionCointainer = document.createElement("span");
 

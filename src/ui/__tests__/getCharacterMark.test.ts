@@ -1,4 +1,3 @@
-import exp from "constants";
 import {
   createCounselor,
   createFighter,
@@ -14,6 +13,7 @@ describe("Given the getCharacterMark", () => {
     test("Then it should return 👑", () => {
       const king = createKing(
         {
+          id: "",
           name: "",
           age: 5,
           familyName: "",
@@ -33,6 +33,7 @@ describe("Given the getCharacterMark", () => {
     test("Then it should return 🗡 ", () => {
       const fighter = createFighter(
         {
+          id: "",
           name: "",
           age: 5,
           familyName: "",
@@ -53,6 +54,7 @@ describe("Given the getCharacterMark", () => {
     test("Then it should return 🎓 ", () => {
       const fighter = createFighter(
         {
+          id: "",
           name: "",
           age: 5,
           familyName: "",
@@ -63,7 +65,7 @@ describe("Given the getCharacterMark", () => {
       );
 
       const counselor = createCounselor(
-        { name: "", age: 5, familyName: "", photoSource: "" },
+        { id: "", name: "", age: 5, familyName: "", photoSource: "" },
         fighter,
       );
 
@@ -79,6 +81,7 @@ describe("Given the getCharacterMark", () => {
     test("Then it should return 🛡️ ", () => {
       const fighter = createFighter(
         {
+          id: "",
           name: "",
           age: 5,
           familyName: "",
@@ -88,7 +91,7 @@ describe("Given the getCharacterMark", () => {
         10,
       );
       const squire = createSquire(
-        { name: "", age: 5, familyName: "", photoSource: "" },
+        { id: "", name: "", age: 5, familyName: "", photoSource: "" },
         fighter,
         5,
       );
@@ -104,6 +107,7 @@ describe("Given the getCharacterMark", () => {
   describe("When it receives a character thats not a king nor a fighter nor counselor nor a squire", () => {
     test("Then it should return an empty text", () => {
       const character: Character = {
+        id: "",
         name: "",
         familyName: "",
         age: 5,
