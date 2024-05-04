@@ -5,11 +5,7 @@ import {
   createSquire,
   kingLocution,
 } from "../../characters/factories/factories.js";
-import {
-  type King,
-  type CharacterWithoutMethodsAndStatus,
-  type Character,
-} from "../../characters/types.js";
+import { type King, type Character } from "../../characters/types.js";
 import { getCharacterCardBackData } from "../characterBack.js";
 
 describe("Given the createCharacterCardBack function", () => {
@@ -17,6 +13,7 @@ describe("Given the createCharacterCardBack function", () => {
     test("Then it should return 'Years of reign 5' ", () => {
       const king: King = createKing(
         {
+          id: "",
           name: "",
           familyName: "",
           age: 5,
@@ -35,12 +32,7 @@ describe("Given the createCharacterCardBack function", () => {
   describe("When it receives a fighter holding an Axe with a dexterity of 10", () => {
     test(`Then it should return "Weapon: 'Axe'" and "Dexterity: 10"`, () => {
       const fighter = createFighter(
-        {
-          name: "",
-          familyName: "",
-          age: 5,
-          photoSource: "",
-        },
+        { id: "", name: "", familyName: "", age: 5, photoSource: "" },
         "Axe",
         10,
       );
@@ -62,6 +54,7 @@ describe("Given the createCharacterCardBack function", () => {
     test("Then it should return 'Ballism level: 10' and 'Serves to: Paco Porras'  ", () => {
       const fighterPaco = createFighter(
         {
+          id: "",
           name: "Paco",
           familyName: "Porras",
           age: 5,
@@ -72,6 +65,7 @@ describe("Given the createCharacterCardBack function", () => {
       );
       const squire = createSquire(
         {
+          id: "",
           name: "",
           familyName: "",
           age: 5,
@@ -97,11 +91,18 @@ describe("Given the createCharacterCardBack function", () => {
   describe("When it receives a counselor that advises king Eric Cartman", () => {
     test("Then it should return 'Advises to: Eric Cartman'", () => {
       const kingEric = createKing(
-        { name: "Eric", familyName: "Cartman", age: 10, photoSource: "" },
+        {
+          id: "",
+          name: "Eric",
+          familyName: "Cartman",
+          age: 10,
+          photoSource: "",
+        },
         9,
       );
       const counselor = createCounselor(
         {
+          id: "",
           name: "",
           familyName: "",
           age: 10,
@@ -120,6 +121,7 @@ describe("Given the createCharacterCardBack function", () => {
   describe("When it receives a plain character", () => {
     test("Then it should return an empty text", () => {
       const character: Character = {
+        id: "",
         name: "",
         familyName: "",
         age: 10,

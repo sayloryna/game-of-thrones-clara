@@ -18,6 +18,7 @@ export const createKing = (
   character: CharacterWithoutMethodsAndStatus,
   totalReignYears: number,
 ): King => ({
+  id: "",
   name: character.name,
   familyName: character.familyName,
   age: character.age,
@@ -37,6 +38,7 @@ export const createFighter = (
   weapon: string,
   dexterityLevel: Level,
 ): Fighter => ({
+  id: "",
   name: character.name,
   familyName: character.familyName,
   age: character.age,
@@ -57,6 +59,7 @@ export const createSquire = (
   master: Fighter,
   grovellingLevel: Level,
 ): Squire => ({
+  id: "",
   name: character.name,
   familyName: character.familyName,
   age: character.age,
@@ -76,6 +79,7 @@ export const createCounselor = (
   character: CharacterWithoutMethodsAndStatus,
   counselledCharacter: Character,
 ): Counselor => ({
+  id: "",
   name: character.name,
   familyName: character.familyName,
   age: character.age,

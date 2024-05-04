@@ -1,5 +1,5 @@
-import { createKing } from "../../characters/factories/factories";
-import { createCharacterList } from "../characterList";
+import { createKing } from "../../characters/factories/factories.js";
+import { createCharacterList } from "../characterList.js";
 
 describe("Given the createCharacterList", () => {
   describe("When it receive a list of with the King Clara Fraga", () => {
@@ -7,6 +7,7 @@ describe("Given the createCharacterList", () => {
       const characters = [
         createKing(
           {
+            id: "",
             name: "Clara",
             familyName: "Fraga",
             age: 1,
