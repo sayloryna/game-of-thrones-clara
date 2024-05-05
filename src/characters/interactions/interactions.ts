@@ -1,14 +1,11 @@
-import {
-  type LocutionResponse,
-  type Character,
-  type Locution,
-} from "../types.js";
+import { type Character, type Locution } from "../types.js";
+export const renderUrl = `https://game-of-thrones-back-4.onrender.com/characters/`;
+export const localHostUrl = `http://localhost:4000/characters/`;
 
-export const speak = async (character: Character): Promise<Locution> => {
-  const response = await fetch(
-    `https://game-of-thrones-back-4.onrender.com/characters/${character.id}`,
-  );
-  const { locution } = (await response.json()) as LocutionResponse;
+export const killCharacter = async (character: Character): Promise<void> => {
+  const response = await fetch(`${renderUrl}die/${character.id}`);
 
-  return locution;
+  if (!response) {
+    throw new Error("Character not found");
+  }
 };

@@ -1,4 +1,4 @@
-import { speak } from "../characters/interactions/interactions.js";
+import { killCharacter } from "../characters/interactions/interactions.js";
 import { type Character } from "../characters/types";
 import { createButton } from "./button.js";
 import { getCharacterCardBackData } from "./characterBack.js";
@@ -40,14 +40,14 @@ export const createCharacterCard = (character: Character) => {
 
   const speakButton = createButton("button__speak", "speak");
 
-  speakButton.addEventListener("click", async () => {
+  speakButton.addEventListener("click", () => {
     const characterHasSpoken = backDataContainer.querySelector(".has-spoken");
 
     if (characterHasSpoken) {
       return;
     }
 
-    const locution = await speak(character);
+    const { locution } = character;
 
     const locutionCointainer = document.createElement("span");
 
@@ -63,8 +63,8 @@ export const createCharacterCard = (character: Character) => {
 
   const dieButton = createButton("button__die", "die");
 
-  dieButton.addEventListener("click", () => {
-    character.die();
+  dieButton.addEventListener("click", async () => {
+    await killCharacter(character);
     characterPhoto.classList.add("character__photo--dead");
     characterStatus.querySelector(".character__status-icon")?.remove();
 
@@ -128,19 +128,19 @@ const getStatusIcon = (character: Character): HTMLImageElement => {
 
 export const getCharacterKindMark = (character: Character) => {
   let mark = "";
-  if (Object.hasOwn(character, "totalReignYears")) {
+  if ("totalReignYears" in character) {
     mark = "👑";
   }
 
-  if (Object.hasOwn(character, "weapon")) {
+  if ("weapon" in character) {
     mark = "🗡";
   }
 
-  if (Object.hasOwn(character, "counselledCharacter")) {
+  if ("counselledCharacter" in character) {
     mark = "🎓";
   }
 
-  if (Object.hasOwn(character, "master")) {
+  if ("master" in character) {
     mark = "🛡️";
   }
 

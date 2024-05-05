@@ -1,10 +1,11 @@
+import { renderUrl } from "../interactions/interactions.js";
 import { type Characters, type Character } from "../types.js";
 
-export const getCharacters = async (): Promise<Character[]> => {
-  const response = await fetch(
-    "https://game-of-thrones-back-4.onrender.com/characters",
-  );
+const getCharacters = async (): Promise<Character[]> => {
+  const response = await fetch(renderUrl);
   const { characters } = (await response.json()) as Characters;
 
   return characters;
 };
+
+export default getCharacters;
