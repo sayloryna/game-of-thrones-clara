@@ -1,9 +1,13 @@
-import { getCharacters } from "./characters/data/characters.js";
+import getCharacters from "./characters/data/characters.js";
 import {
   renderCharacterList,
   renderMainContainerWithHeader,
 } from "./ui/index.js";
 
-renderMainContainerWithHeader("Game of Thrones");
+const renderContent = async (title: string): Promise<void> => {
+  renderMainContainerWithHeader(title);
 
-renderCharacterList(await getCharacters());
+  renderCharacterList(await getCharacters());
+};
+
+await renderContent("Game of Thrones");

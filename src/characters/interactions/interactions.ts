@@ -12,3 +12,14 @@ export const speak = async (character: Character): Promise<Locution> => {
 
   return locution;
 };
+
+export const killCharacter = async (character: Character): Promise<void> => {
+  const response = await fetch(
+    `https://game-of-thrones-back-4.onrender.com/characters/${character.id}`,
+    { method: "patch" } as RequestInit,
+  );
+
+  if (!response) {
+    throw new Error("Character not found");
+  }
+};
