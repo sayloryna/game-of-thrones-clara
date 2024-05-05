@@ -1,14 +1,15 @@
-import {
-  type CharacterWithoutMethodsAndStatus,
-  type Counselor,
-} from "../types";
+import { type BasicCharacter, type Counselor } from "../types";
 
-import { createCounselor, createFighter } from "./factories.js";
+import {
+  counselorLocution,
+  createCounselor,
+  createFighter,
+} from "./factories.js";
 
 describe("Given a createCounselor function", () => {
   describe("When it receives a 23 years old character named Clara Fraga,  who counsels another character", () => {
     test("Then it should return a 23 YO counselor named Clara Fraga and cousels another character", () => {
-      const character: CharacterWithoutMethodsAndStatus = {
+      const character: BasicCharacter = {
         id: "",
         name: "Clara",
         familyName: "Fraga",
@@ -35,6 +36,7 @@ describe("Given a createCounselor function", () => {
         age: 23,
         isAlive: true,
         photoSource: "",
+        locution: counselorLocution,
         counselledCharacter,
       };
       const counselor = createCounselor(character, counselledCharacter);

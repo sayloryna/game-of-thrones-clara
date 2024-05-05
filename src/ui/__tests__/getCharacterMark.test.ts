@@ -65,7 +65,13 @@ describe("Given the getCharacterMark", () => {
       );
 
       const counselor = createCounselor(
-        { id: "", name: "", age: 5, familyName: "", photoSource: "" },
+        {
+          id: "",
+          name: "",
+          age: 5,
+          familyName: "",
+          photoSource: "",
+        },
         fighter,
       );
 
@@ -91,7 +97,13 @@ describe("Given the getCharacterMark", () => {
         10,
       );
       const squire = createSquire(
-        { id: "", name: "", age: 5, familyName: "", photoSource: "" },
+        {
+          id: "",
+          name: "",
+          age: 5,
+          familyName: "",
+          photoSource: "",
+        },
         fighter,
         5,
       );
@@ -112,6 +124,7 @@ describe("Given the getCharacterMark", () => {
         familyName: "",
         age: 5,
         photoSource: "",
+        locution: "Vais a morir todos",
         isAlive: true,
         die(this: Character) {
           this.isAlive = false;

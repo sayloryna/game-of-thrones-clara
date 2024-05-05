@@ -1,8 +1,4 @@
-import { kill } from "process";
-import {
-  killCharacter,
-  speak,
-} from "../characters/interactions/interactions.js";
+import { killCharacter } from "../characters/interactions/interactions.js";
 import { type Character } from "../characters/types";
 import { createButton } from "./button.js";
 import { getCharacterCardBackData } from "./characterBack.js";
@@ -44,14 +40,14 @@ export const createCharacterCard = (character: Character) => {
 
   const speakButton = createButton("button__speak", "speak");
 
-  speakButton.addEventListener("click", async () => {
+  speakButton.addEventListener("click", () => {
     const characterHasSpoken = backDataContainer.querySelector(".has-spoken");
 
     if (characterHasSpoken) {
       return;
     }
 
-    const locution = await speak(character);
+    const { locution } = character;
 
     const locutionCointainer = document.createElement("span");
 

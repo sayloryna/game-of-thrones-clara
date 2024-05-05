@@ -1,6 +1,6 @@
 import {
   type Character,
-  type CharacterWithoutMethodsAndStatus,
+  type BasicCharacter,
   type Counselor,
   type Fighter,
   type King,
@@ -15,7 +15,7 @@ export const counselorLocution =
 export const squireLocution = "Soy un loser";
 
 export const createKing = (
-  character: CharacterWithoutMethodsAndStatus,
+  character: BasicCharacter,
   totalReignYears: number,
 ): King => ({
   id: "",
@@ -24,6 +24,7 @@ export const createKing = (
   age: character.age,
   photoSource: character.photoSource,
   isAlive: true,
+  locution: kingLocution,
   totalReignYears,
   die(this: King) {
     this.isAlive = false;
@@ -34,7 +35,7 @@ export const createKing = (
 });
 
 export const createFighter = (
-  character: CharacterWithoutMethodsAndStatus,
+  character: BasicCharacter,
   weapon: string,
   dexterityLevel: Level,
 ): Fighter => ({
@@ -44,6 +45,7 @@ export const createFighter = (
   age: character.age,
   isAlive: true,
   photoSource: character.photoSource,
+  locution: fighterLocution,
   weapon,
   dexterityLevel,
   die(this: Fighter) {
@@ -55,7 +57,7 @@ export const createFighter = (
 });
 
 export const createSquire = (
-  character: CharacterWithoutMethodsAndStatus,
+  character: BasicCharacter,
   master: Fighter,
   grovellingLevel: Level,
 ): Squire => ({
@@ -65,6 +67,7 @@ export const createSquire = (
   age: character.age,
   isAlive: true,
   photoSource: character.photoSource,
+  locution: squireLocution,
   master,
   grovellingLevel,
   die(this: Squire) {
@@ -76,7 +79,7 @@ export const createSquire = (
 });
 
 export const createCounselor = (
-  character: CharacterWithoutMethodsAndStatus,
+  character: BasicCharacter,
   counselledCharacter: Character,
 ): Counselor => ({
   id: "",
@@ -85,6 +88,7 @@ export const createCounselor = (
   age: character.age,
   isAlive: true,
   photoSource: character.photoSource,
+  locution: counselorLocution,
   counselledCharacter,
   die(this: Counselor) {
     this.isAlive = false;

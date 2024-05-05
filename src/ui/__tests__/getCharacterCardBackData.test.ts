@@ -127,6 +127,7 @@ describe("Given the createCharacterCardBack function", () => {
         age: 10,
         photoSource: "",
         isAlive: true,
+        locution: "",
         die() {
           this.isAlive = false;
         },

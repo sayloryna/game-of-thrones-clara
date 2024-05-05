@@ -11,15 +11,16 @@ export interface Character {
   name: string;
   familyName: string;
   age: number;
+  locution: string;
   photoSource: string;
   isAlive: boolean;
   die: () => void;
   speak: () => Locution;
 }
 
-export type CharacterWithoutMethodsAndStatus = Omit<
+export type BasicCharacter = Omit<
   Character,
-  "speak" | "die" | "isAlive"
+  "speak" | "die" | "isAlive" | "locution"
 >;
 
 export interface King extends Character {
